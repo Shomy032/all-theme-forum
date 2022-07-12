@@ -110,7 +110,7 @@ export class PostDialogComponent implements OnInit {
     .add({
       ...this.form.getRawValue(),
       userId : this.authService.getUserId(),
-      likes : null,
+      likes : 0,
       userLiked : [] })
     .then(res => {
       this.dialogRef.close()
