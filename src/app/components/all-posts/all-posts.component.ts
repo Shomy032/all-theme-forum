@@ -49,6 +49,10 @@ export class AllPostsComponent implements OnInit {
     this.documents$ = this.postCollection.valueChanges({ idField: 'id' })
     .pipe(finalize(() => this.store.dispatch(StopLoading())))
 
+    this.documents$.subscribe(data => {
+      console.log(data)
+    })
+
     this.categories$ = this.categoriesCollection.valueChanges()
     .pipe(finalize(() => this.store.dispatch(StopLoading())))
 
