@@ -109,9 +109,8 @@ export class PostDialogComponent implements OnInit {
    this.postCollection
     .add({
       ...this.form.getRawValue(),
-      userId : this.authService.getUserId(),
-      likes : 0,
-      userLiked : [] })
+      userId : this.authService.getUserId()
+     })
     .then(res => {
       this.dialogRef.close()
     })
