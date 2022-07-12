@@ -4,8 +4,7 @@ service cloud.firestore {
   
     match /app/{origin}/posts/{id} {
       allow read: if true
-      allow create: if request.auth != null && request.auth.uid != null && request.auth.uid != "" && 
-      request.resource.data.likes == 0;
+      allow create: if request.auth != null && request.auth.uid != null && request.auth.uid != "";
       allow update: if request.auth != null &&
       (resource.data.userId == resource.data.userId) &&
       (editingOnlyAllowedFields(["content", "title"]) ? request.auth.uid == resource.data.userId  : true) &&
