@@ -128,7 +128,6 @@ export class PostDialogComponent implements OnInit {
   }
 
   get postCollection(){
-    //
     return this.database.allPostCollection
   }
 }
