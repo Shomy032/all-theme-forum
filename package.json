@@ -8,6 +8,7 @@
     "build-prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "deploy-rules" : "firebase deploy --only firestore:rules",
+    "deploy-storage-rules" : "firebase deploy --only storage:rules",
     "deploy-func" :"firebase deploy --only functions",
     "test": "ng test"
   },
