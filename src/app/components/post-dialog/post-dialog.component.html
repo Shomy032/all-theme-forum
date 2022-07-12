@@ -1,0 +1,26 @@
+<div class="dialog">
+    <div class="dialog-header">
+        <h1 mat-dialog-title>Add Post</h1>
+        <mat-icon style="cursor: pointer;" mat-dialog-close>close</mat-icon>
+        <mat-progress-bar *ngIf="loading" color="primary" class="dialog-progress-bar" mode="indeterminate"></mat-progress-bar>
+    </div>
+    
+    <div mat-dialog-content>
+        <form [formGroup]="form">
+             <mat-form-field appearance="fill">
+                <mat-label>Post Title</mat-label>
+                <input matInput type="text" formControlName="title">
+                <mat-error *ngIf="form.get('title')?.hasError('required')">Field Required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Post Content</mat-label>
+                <textarea  matInput type="text" formControlName="content"></textarea>
+                <mat-error *ngIf="form.get('content')?.hasError('required')">Field Required</mat-error>
+              </mat-form-field>
+            
+            <button (click)="addPost()" mat-raised-button color="primary">Submit</button>
+        </form>
+    </div> 
+</div>
+

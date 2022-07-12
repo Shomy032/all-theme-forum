@@ -1,0 +1,78 @@
+.all-posts-wraper{
+  margin-top: 2rem;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.all-posts{
+    width: 50%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.single-post{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    position: relative;
+    flex-direction: column;
+    min-width: 700px;
+    max-width: 700px;
+    min-height: 200px;
+    // max-height: 300px;
+    background-color: rgb(221, 221, 221);
+    border: 1px solid gray;
+
+    box-sizing: border-box;
+    padding: 2rem 0.5rem;
+}
+
+.edit-post,
+.post-title,
+.like-count,
+.delete-post,
+.like-post{
+  position: absolute;
+  top: 5px;
+  color: gray; 
+  cursor: pointer;
+}
+
+.edit-post{
+  right: 30px;
+}
+
+.like-count {
+  right: 100px;
+}
+
+.delete-post{
+  right: 5px;
+}
+
+.like-post{
+  right: 65px;
+}
+
+.post-title{
+    left: 5px;
+    font-size: 1.2rem;
+    color: rgb(92, 92, 92);
+    font-weight: bold;
+}
+
+.post-content{
+    font-size: 0.9rem;
+    color: rgb(116, 116, 116);
+    font-weight: lighter;
+}
+
+.liked{
+  color: red;
+}

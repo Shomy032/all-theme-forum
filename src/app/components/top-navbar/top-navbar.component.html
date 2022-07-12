@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="navbar">
+    <button mat-raised-button color="accent" (click)="addNewPost()">Add Post</button>
+
+    <ng-container>
+        <button *ngIf="!authService.isAuthenticated()" mat-raised-button color="warn" (click)="authService.GoogleAuth()">
+            Log in with Google
+        </button>
+
+        <button *ngIf="authService.isAuthenticated()" mat-raised-button color="warn" (click)="authService.logoutUser()">
+            Logout
+        </button>
+
+        <!-- (click)="" -->
+        <button *ngIf="authService.isAuthenticated()" class="user-btn" mat-fab color="warn">
+           <img class="user-img" [src]="authService.userPicture" alt="user-avatar">
+        </button>
+    </ng-container>
+    
+
+    <mat-progress-bar *ngIf="$loading | async" color="primary" class="app-progress-bar" mode="indeterminate"></mat-progress-bar>
+
+</mat-toolbar>

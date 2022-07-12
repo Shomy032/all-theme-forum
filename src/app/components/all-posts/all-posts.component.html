@@ -1,0 +1,18 @@
+<div class="top-nav">
+
+</div>
+
+<div class="all-posts-wraper">
+  <div *ngIf="(documents$ | async) as data">
+    <div class="single-post" *ngFor="let post of data">
+      <span class="post-title">{{ prepareTitle(post.title) }}</span>
+      <span class="post-content">{{ post.content }}</span>
+
+      
+      <mat-icon *ngIf="authService.getUserId() === post.userId" class="edit-post" (click)="editPost(post)">edit</mat-icon>
+      <span class="like-count" >{{ post.likes || 0 }}</span>
+      <mat-icon [ngClass]="{ 'liked' : post.userLiked?.includes(authService.getUserId()) }" class="like-post" (click)="likePost(post)">favorite</mat-icon>
+      <mat-icon *ngIf="authService.getUserId() === post.userId" class="delete-post" (click)="deletePost(post)">delete</mat-icon>
+    </div>
+  </div>
+</div>
